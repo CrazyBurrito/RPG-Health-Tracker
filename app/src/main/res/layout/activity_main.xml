@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:baselineAligned="false">
+
+
+    <LinearLayout
+        android:background="@drawable/border_top"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="CharName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/character_name"
+            android:textSize="36sp"
+            android:layout_weight="7"
+            android:autoText="false"
+            android:textIsSelectable="true"
+            android:textAlignment="center"
+            android:layout_margin="15sp"
+            android:maxLength="15" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_settings"
+            android:onClick="showPopup"
+            android:tint="@android:color/darker_gray"
+            android:background="@android:color/transparent"
+            android:id="@+id/character_settings"
+            android:scaleX=".75"
+            android:scaleY=".75"
+            android:paddingTop="15sp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_bottom">
+
+        <TextView
+            android:text="@string/base_health_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/base_health_message"
+            android:paddingLeft="10sp"
+            android:layout_weight="0.10"
+            android:textSize="18sp" />
+
+        <TextView
+
+            android:text="BaseHealth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/health_text_view"
+            android:textSize="32sp"
+            android:textAlignment="textStart"
+            android:paddingBottom="10sp"
+            android:layout_weight="0.82" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:text="@string/current_health_message"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+
+        <TextView
+            android:text="CurrentHealth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/current_health_text_view"
+            android:textAlignment="center"
+            android:textSize="36sp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:text="@string/minus_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/minus_one_button"
+                android:layout_weight="1"
+                android:onClick="minusOne"
+                style="@style/Widget.AppCompat.Button" />
+
+            <Button
+                android:text="@string/plus_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/plus_one_button"
+                android:layout_weight="1"
+                android:onClick="plusOne" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:text="@string/minus_five"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/minus_five_button"
+                android:layout_weight="1"
+                android:onClick="minusFive" />
+
+            <Button
+                android:text="@string/plus_five"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/plus_five_button"
+                android:layout_weight="1"
+                android:onClick="plusFive" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:text="@string/minus_ten"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/minus_ten_button"
+                android:layout_weight="1"
+                android:onClick="minusTen" />
+
+            <Button
+                android:text="@string/plus_ten"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/plus_ten_button"
+                android:layout_weight="1"
+                android:onClick="plusTen" />
+        </LinearLayout>
+
+        <Button
+            android:text="@string/reset_health"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/reset_health_button"
+            android:textAlignment="center"
+            android:onClick="resetHealth" />
+
+        <Button
+            android:text="@string/log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/log_button"
+            android:onClick="viewLog" />
+
+    </LinearLayout>
+
+</LinearLayout>
+
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textCapWords|textPersonName"
+        android:ems="10"
+        android:hint="@string/change_name_message"
+        android:text=""
+        android:id="@+id/change_name"
+        android:maxLength="15" />
+
+    <Button
+        android:text="@string/save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/save_name"
+        android:onClick="saveName"/>
+</LinearLayout>
