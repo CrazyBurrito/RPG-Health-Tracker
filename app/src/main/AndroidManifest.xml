@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.josh.RPGHealthTracker">
-    <uses-sdk android:minSdkVersion="24"/>
+    package="com.josh.RPGHealthTracker">/>
 
     <application
         android:allowBackup="true"
@@ -17,10 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.josh.RPGHealthTracker.DisplayMessageActivity" />
         <activity android:name="com.josh.RPGHealthTracker.ChangeNameActivity" />
         <activity android:name="com.josh.RPGHealthTracker.EditHealthActivity" />
-        <activity android:name="com.josh.RPGHealthTracker.LogActivity"></activity>
+        <activity android:name="com.josh.RPGHealthTracker.LogActivity"/>
     </application>
 
 </manifest>

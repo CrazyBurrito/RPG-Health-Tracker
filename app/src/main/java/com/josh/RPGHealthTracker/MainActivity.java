@@ -7,22 +7,22 @@ import android.os.Bundle;
 import android.support.v7.widget.PopupMenu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.EditText;
 import android.view.View;
 import android.content.Intent;
 import android.widget.TextView;
 
 import java.util.Date;
+import java.util.Locale;
 
 
 public class MainActivity extends AppCompatActivity {
-    public static String EXTRA_MESSAGE = "com.josh.RPGHealthTracker.Message";
-    public SharedPreferences settings;
-    public String base_health;
-    public int currentHealth;
+    public static final String EXTRA_MESSAGE = "com.josh.RPGHealthTracker.Message";
+    private SharedPreferences settings;
+    private String base_health;
+    private int currentHealth;
     public static String log = "";
     public static String logTime = "";
-    SimpleDateFormat date = new SimpleDateFormat("hh:mm, MM/dd/yy");
+    private final SimpleDateFormat date = new SimpleDateFormat("hh:mm, MM/dd/yy", Locale.US);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,8 @@ public class MainActivity extends AppCompatActivity {
         TextView baseHealthText = (TextView) findViewById(R.id.health_text_view);
         baseHealthText.setText(base_health);
         TextView currentHealthText = (TextView) findViewById(R.id.current_health_text_view);
-        currentHealthText.setText(""+currentHealth);
+        String text = ""+current_health;
+        currentHealthText.setText(text);
         TextView characterName = (TextView) findViewById(R.id.character_name);
         characterName.setText(char_name);
 
@@ -75,33 +76,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    protected void onResume(){
-        super.onResume();
-
-//        String char_name = settings.getString("charName","null");
-//        TextView characterName = (TextView) findViewById(R.id.character_name);
-//        characterName.setText(char_name);
-    }
-
-    public void sendMessage(View view) {
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
-        /*EditText editText = (EditText) findViewById(R.id.edit_message);
-        int base_health = Integer.parseInt(editText.getText().toString());
-        textView.setText(base_health);
-*/
-        EditText editText = (EditText) findViewById(R.id.edit_health_message);
-        String message = editText.getText().toString();
-
-        SharedPreferences settings = getApplicationContext().getSharedPreferences("PREF_FILE",0);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putString("baseHealth", message);
-        editor.apply();
-
-
-        intent.putExtra(EXTRA_MESSAGE, "");
-        startActivity(intent);
-    }
-
     public void viewLog(View view) {
         Intent intent = new Intent(this, LogActivity.class);
 
@@ -109,9 +83,21 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void showPopup(View view) {
+    public void changeName(View view){
+        Intent intentName = new Intent(MainActivity.this, ChangeNameActivity.class);
+        intentName.putExtra(EXTRA_MESSAGE, "");
+        startActivity(intentName);
+    }
 
-        PopupMenu popup = new PopupMenu(this, view);
+    public void editHealth(View view){
+        Intent intentHealth = new Intent(MainActivity.this, EditHealthActivity.class);
+        intentHealth.putExtra(EXTRA_MESSAGE, "");
+        startActivity(intentHealth);
+    }
+
+    public void showPopup(View v) {
+
+        PopupMenu popup = new PopupMenu(this, v);
 
         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
@@ -145,7 +131,8 @@ public class MainActivity extends AppCompatActivity {
     public void plusOne(View view){
         currentHealth+=1;
         TextView currentHealthText = (TextView) findViewById(R.id.current_health_text_view);
-        currentHealthText.setText(""+currentHealth);
+        String text = ""+currentHealth;
+        currentHealthText.setText(text);
         String time = date.format(new Date());
         log+="+1\n";
         logTime+=time + "\n";
@@ -154,7 +141,8 @@ public class MainActivity extends AppCompatActivity {
     public void minusOne(View view){
         currentHealth-=1;
         TextView currentHealthText = (TextView) findViewById(R.id.current_health_text_view);
-        currentHealthText.setText(""+currentHealth);
+        String text = ""+currentHealth;
+        currentHealthText.setText(text);
         String time = date.format(new Date());
         log+="-1\n";
         logTime+=time + "\n";
@@ -163,7 +151,8 @@ public class MainActivity extends AppCompatActivity {
     public void plusFive(View view){
         currentHealth+=5;
         TextView currentHealthText = (TextView) findViewById(R.id.current_health_text_view);
-        currentHealthText.setText(""+currentHealth);
+        String text = ""+currentHealth;
+        currentHealthText.setText(text);
         String time = date.format(new Date());
         log+="+5\n";
         logTime+=time + "\n";
@@ -172,7 +161,8 @@ public class MainActivity extends AppCompatActivity {
     public void minusFive(View view){
         currentHealth-=5;
         TextView currentHealthText = (TextView) findViewById(R.id.current_health_text_view);
-        currentHealthText.setText(""+currentHealth);
+        String text = ""+currentHealth;
+        currentHealthText.setText(text);
         String time = date.format(new Date());
         log+="-5\n";
         logTime+=time + "\n";
@@ -181,7 +171,8 @@ public class MainActivity extends AppCompatActivity {
     public void plusTen(View view){
         currentHealth+=10;
         TextView currentHealthText = (TextView) findViewById(R.id.current_health_text_view);
-        currentHealthText.setText(""+currentHealth);
+        String text = ""+currentHealth;
+        currentHealthText.setText(text);
         String time = date.format(new Date());
         log+="+10\n";
         logTime+=time + "\n";
@@ -190,7 +181,8 @@ public class MainActivity extends AppCompatActivity {
     public void minusTen(View view){
         currentHealth-=10;
         TextView currentHealthText = (TextView) findViewById(R.id.current_health_text_view);
-        currentHealthText.setText(""+currentHealth);
+        String text = ""+currentHealth;
+        currentHealthText.setText(text);
         String time = date.format(new Date());
         log+="-10\n";
         logTime+=time + "\n";
@@ -199,7 +191,8 @@ public class MainActivity extends AppCompatActivity {
     public void resetHealth(View view){
         currentHealth = Integer.parseInt(base_health);
         TextView currentHealthText = (TextView) findViewById(R.id.current_health_text_view);
-        currentHealthText.setText(""+currentHealth);
+        String text = ""+currentHealth;
+        currentHealthText.setText(text);
         String time = date.format(new Date());
         log+="Reset to " + currentHealth + "\n";
         logTime+=time + "\n";

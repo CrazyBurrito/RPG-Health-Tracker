@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -16,17 +14,17 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:text="CharName"
+            android:id="@+id/character_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/character_name"
-            android:textSize="36sp"
-            android:layout_weight="7"
-            android:autoText="false"
-            android:textIsSelectable="true"
-            android:textAlignment="center"
             android:layout_margin="15sp"
-            android:maxLength="15" />
+            android:layout_weight="7"
+            android:maxLength="15"
+            android:onClick="changeName"
+            android:text="CharName"
+            android:textAlignment="center"
+            android:textIsSelectable="true"
+            android:textSize="36sp" />
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -39,7 +37,8 @@
             android:scaleX=".75"
             android:scaleY=".75"
             android:paddingTop="15sp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:contentDescription="settings gear"/>
 
     </LinearLayout>
 
@@ -54,20 +53,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/base_health_message"
-            android:paddingLeft="10sp"
+            android:paddingStart="10sp"
+            android:paddingEnd="0sp"
             android:layout_weight="0.10"
             android:textSize="18sp" />
 
         <TextView
 
-            android:text="BaseHealth"
+            android:id="@+id/health_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/health_text_view"
-            android:textSize="32sp"
-            android:textAlignment="textStart"
+            android:layout_weight="0.82"
+            android:onClick="editHealth"
             android:paddingBottom="10sp"
-            android:layout_weight="0.82" />
+            android:text="BaseHealth"
+            android:textAlignment="textStart"
+            android:textSize="32sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -94,7 +95,8 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            style="android:attr/buttonBarStyle">
 
             <Button
                 android:text="@string/minus_one"
@@ -103,7 +105,7 @@
                 android:id="@+id/minus_one_button"
                 android:layout_weight="1"
                 android:onClick="minusOne"
-                style="@style/Widget.AppCompat.Button" />
+                style="android:attr/buttonBarButtonStyle"/>
 
             <Button
                 android:text="@string/plus_one"
@@ -111,13 +113,15 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/plus_one_button"
                 android:layout_weight="1"
-                android:onClick="plusOne" />
+                android:onClick="plusOne"
+                style="android:attr/buttonBarButtonStyle"/>
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            style="android:attr/buttonBarStyle">
 
             <Button
                 android:text="@string/minus_five"
@@ -125,7 +129,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/minus_five_button"
                 android:layout_weight="1"
-                android:onClick="minusFive" />
+                android:onClick="minusFive"
+                style="android:attr/buttonBarButtonStyle" />
 
             <Button
                 android:text="@string/plus_five"
@@ -133,13 +138,15 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/plus_five_button"
                 android:layout_weight="1"
-                android:onClick="plusFive" />
+                android:onClick="plusFive"
+                style="android:attr/buttonBarButtonStyle" />
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            style="android:attr/buttonBarStyle">
 
             <Button
                 android:text="@string/minus_ten"
@@ -147,7 +154,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/minus_ten_button"
                 android:layout_weight="1"
-                android:onClick="minusTen" />
+                android:onClick="minusTen"
+                style="android:attr/buttonBarButtonStyle" />
 
             <Button
                 android:text="@string/plus_ten"
@@ -155,7 +163,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/plus_ten_button"
                 android:layout_weight="1"
-                android:onClick="plusTen" />
+                android:onClick="plusTen"
+                style="android:attr/buttonBarButtonStyle" />
         </LinearLayout>
 
         <Button

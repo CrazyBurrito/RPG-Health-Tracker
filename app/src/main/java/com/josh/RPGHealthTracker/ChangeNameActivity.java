@@ -1,6 +1,5 @@
 package com.josh.RPGHealthTracker;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,17 +9,13 @@ import android.widget.EditText;
 
 public class ChangeNameActivity  extends AppCompatActivity {
 
-    public static String message;
-    protected EditText name;
+    private EditText name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_name);
         name = (EditText) findViewById(R.id.change_name);
-
-        Intent intent = getIntent();
-        message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
     }
 
     protected void onStart(){

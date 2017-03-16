@@ -2,9 +2,6 @@
 <resources>
     <string name="app_name">RPG Health Tracker</string>
     <string name="change_health_message">Enter your Base Health</string>
-    <string name="button_send">Update</string>
-    <string name="changes_saved_message">You have successfully changed your base health.</string>
-    <string name="failure_message">Something went wrong. Your changes have not been saved.</string>
     <string name="base_health_message">Your base health is</string>
     <string name="plus_one">+1</string>
     <string name="plus_five">+5</string>
@@ -16,8 +13,7 @@
     <string name="reset_health">Reset current health</string>
     <string name="change_name_message">Enter Character Name</string>
     <string name="save">Save</string>
-    <string name="save_and_reset">Save and Reset Current Healh</string>
-    <string name="title_activity_log">activity_log</string>
+    <string name="save_and_reset">Save and Reset Current Health</string>
     <string name="log">View Log</string>
     <string name="log_title">Modification &#160;&#160;&#160;&#160;|&#160;&#160;&#160;&#160;Time</string>
 

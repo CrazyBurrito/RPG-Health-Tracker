@@ -1,6 +1,5 @@
 package com.josh.RPGHealthTracker;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,17 +13,13 @@ import android.widget.TextView;
 
 public class EditHealthActivity extends AppCompatActivity {
 
-    public static String message;
-    protected EditText health;
+    private EditText health;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_health);
         health = (EditText) findViewById(R.id.edit_health);
-
-       Intent intent = getIntent();
-        message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
     }
 
     protected void onStart(){

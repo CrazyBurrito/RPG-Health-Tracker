@@ -4,33 +4,29 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:orientation="vertical"
+
+    <EditText
+        android:id="@+id/edit_health"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/change_health_message"
+        android:inputType="number"
+        android:text="" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:hint="@string/change_health_message"
-            android:text=""
-            android:id="@+id/edit_health" />
+    <Button
+        android:id="@+id/save_health"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="saveHealth"
+        android:text="@string/save" />
 
-        <Button
-            android:text="@string/save"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/save_health"
-            android:onClick="saveHealth"/>
+    <Button
+        android:id="@+id/save_and_reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="saveAndReset"
+        android:text="@string/save_and_reset" />
 
-        <Button
-            android:text="@string/save_and_reset"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/save_and_reset"
-            android:onClick="saveAndReset" />
-    </LinearLayout>
 
 </LinearLayout>
