@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.v4.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:baselineAligned="false">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
     <LinearLayout
         android:background="@drawable/border_top"
@@ -72,118 +78,160 @@
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView2"
             android:text="@string/current_health_message"
             android:textAlignment="center"
             android:textSize="18sp" />
 
         <TextView
-            android:text="CurrentHealth"
+            android:id="@+id/current_health_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/current_health_text_view"
+            android:text="CurrentHealth"
             android:textAlignment="center"
             android:textSize="36sp" />
 
         <LinearLayout
-            android:orientation="horizontal"
+            style="android:attr/buttonBarStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="android:attr/buttonBarStyle">
+            android:orientation="horizontal">
 
             <Button
-                android:text="@string/minus_one"
+                android:id="@+id/minus_one_button"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/minus_one_button"
                 android:layout_weight="1"
                 android:onClick="minusOne"
-                style="android:attr/buttonBarButtonStyle"/>
+                android:text="@string/minus_one" />
 
             <Button
-                android:text="@string/plus_one"
+                android:id="@+id/plus_one_button"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/plus_one_button"
                 android:layout_weight="1"
                 android:onClick="plusOne"
-                style="android:attr/buttonBarButtonStyle"/>
+                android:text="@string/plus_one" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
+            style="android:attr/buttonBarStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="android:attr/buttonBarStyle">
+            android:orientation="horizontal">
 
             <Button
-                android:text="@string/minus_five"
+                android:id="@+id/minus_five_button"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/minus_five_button"
                 android:layout_weight="1"
                 android:onClick="minusFive"
-                style="android:attr/buttonBarButtonStyle" />
+                android:text="@string/minus_five" />
 
             <Button
-                android:text="@string/plus_five"
+                android:id="@+id/plus_five_button"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/plus_five_button"
                 android:layout_weight="1"
                 android:onClick="plusFive"
-                style="android:attr/buttonBarButtonStyle" />
+                android:text="@string/plus_five" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
+            style="android:attr/buttonBarStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="android:attr/buttonBarStyle">
+            android:orientation="horizontal">
 
             <Button
-                android:text="@string/minus_ten"
+                android:id="@+id/minus_ten_button"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/minus_ten_button"
                 android:layout_weight="1"
                 android:onClick="minusTen"
-                style="android:attr/buttonBarButtonStyle" />
+                android:text="@string/minus_ten" />
 
             <Button
-                android:text="@string/plus_ten"
+                android:id="@+id/plus_ten_button"
+                style="android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/plus_ten_button"
                 android:layout_weight="1"
                 android:onClick="plusTen"
-                style="android:attr/buttonBarButtonStyle" />
+                android:text="@string/plus_ten" />
         </LinearLayout>
 
         <Button
-            android:text="@string/reset_health"
+            android:id="@+id/reset_health_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/reset_health_button"
+            android:onClick="resetHealth"
+            android:text="@string/reset_health"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/temp_hp_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/temp_hp_message"
             android:textAlignment="center"
-            android:onClick="resetHealth" />
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/temp_hp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TempHP"
+            android:textAlignment="center"
+            android:textSize="36sp" />
 
         <Button
-            android:text="@string/log"
+            android:id="@+id/plus_temp_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="plusTempHP"
+            android:text="@string/plus_one" />
+
+        <Button
+            android:id="@+id/minus_temp_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="minusTempHP"
+            android:text="@string/minus_one" />
+
+        <Button
             android:id="@+id/log_button"
-            android:onClick="viewLog" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="viewLog"
+            android:text="@string/log" />
 
     </LinearLayout>
 
-</LinearLayout>
+    </LinearLayout>
+    <ListView
+        android:id="@+id/drawer"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:background="#111"/>
+
+</android.support.v4.widget.DrawerLayout>
 
 

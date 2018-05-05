@@ -7,7 +7,10 @@
     <string name="plus_five">+5</string>
     <string name="plus_ten">+10</string>
     <string name="minus_one">-1</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
     <string name="current_health_message">Current Health</string>
+    <string name="temp_hp_message">Temporary Hitpoints</string>
     <string name="minus_five">-5</string>
     <string name="minus_ten">-10</string>
     <string name="reset_health">Reset current health</string>

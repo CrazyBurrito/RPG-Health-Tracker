@@ -3,6 +3,7 @@ package com.josh.RPGHealthTracker;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputFilter;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -37,7 +38,11 @@ public class EditHealthActivity extends AppCompatActivity {
         SharedPreferences settings = getApplicationContext().getSharedPreferences("PREF_FILE",0);
 
         health = (EditText) findViewById(R.id.edit_health);
-        String char_health = health.getText().toString();
+        int int_health = Integer.parseInt(health.getText().toString());
+        if(int_health > 100000){
+            int_health=100000;
+        }
+        String char_health = Integer.toString(int_health);
 
         SharedPreferences.Editor editor = settings.edit();
         editor.putString("baseHealth", char_health);
@@ -51,7 +56,11 @@ public class EditHealthActivity extends AppCompatActivity {
         SharedPreferences settings = getApplicationContext().getSharedPreferences("PREF_FILE",0);
 
         health = (EditText) findViewById(R.id.edit_health);
-        String char_health = health.getText().toString();
+        int int_health = Integer.parseInt(health.getText().toString());
+        if(int_health > 100000){
+            int_health=100000;
+        }
+        String char_health = Integer.toString(int_health);
 
         SharedPreferences.Editor editor = settings.edit();
         editor.putString("baseHealth", char_health);
